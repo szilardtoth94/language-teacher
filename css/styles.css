@@ -188,3 +188,32 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
   .about-image { display: flex; justify-content: center; }
   .about-avatar-placeholder { width: 220px; height: 250px; }
 }
+
+/* ── Languages ── */
+.lang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+.lang-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  transition: var(--transition);
+}
+.lang-card:hover {
+  background: rgba(255,255,255,.10);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.25);
+}
+
+.lang-flag { font-size: 3rem; margin-bottom: 16px; }
+.lang-name { font-size: 1.4rem; color: white; margin-bottom: 10px; }
+.lang-desc { font-size: 0.9rem; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 24px; }
+
+.lang-levels { display: flex; gap: 6px; margin-bottom: 8px; }
+.level-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,.2); }
+.level-dot.active { background: var(--accent); }
+
+.lang-level-label { font-size: 0.75rem; color: rgba(255,255,255,.45); }
+
+@media (max-width: 900px) { .lang-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .lang-grid { grid-template-columns: 1fr; } }
