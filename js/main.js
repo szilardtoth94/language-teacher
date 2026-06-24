@@ -39,15 +39,16 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealEls.forEach(el => revealObserver.observe(el));
 
 // Highlight active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks2 = document.querySelectorAll('.nav-link');
+const navLinkItems = document.querySelectorAll('.nav-link');
+const linkedSectionIds = [...navLinkItems].map(l => l.getAttribute('href').slice(1));
+const linkedSections = linkedSectionIds.map(id => document.getElementById(id)).filter(Boolean);
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      navLinks2.forEach(link => {
+      navLinkItems.forEach(link => {
         link.classList.toggle('nav-link--active', link.getAttribute('href') === `#${entry.target.id}`);
       });
     }
   });
-}, { threshold: 0.4 });
-sections.forEach(s => sectionObserver.observe(s));
+}, { threshold: 0.3 });
+linkedSections.forEach(s => sectionObserver.observe(s));

@@ -190,7 +190,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 }
 
 /* ── Languages ── */
-.lang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.lang-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 
 .lang-card {
   background: rgba(255,255,255,.06);
@@ -215,7 +215,6 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 
 .lang-level-label { font-size: 0.75rem; color: rgba(255,255,255,.45); }
 
-@media (max-width: 900px) { .lang-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .lang-grid { grid-template-columns: 1fr; } }
 
 /* ── Services ── */
@@ -335,3 +334,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 /* ── Section backgrounds ── */
 #about { background: var(--bg); }
 #services { background: var(--bg); }
+#languages { background: var(--primary); }
+#contact { background: var(--primary); }
+
+.section-header { margin-bottom: 56px; }
