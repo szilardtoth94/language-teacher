@@ -246,3 +246,34 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 
 @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* ── Why Choose Me ── */
+.why-section { background: linear-gradient(135deg, #fef9f0, #fff8ec); }
+
+.why-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+.why-header { position: sticky; top: 100px; }
+
+.why-cards { display: flex; flex-direction: column; gap: 28px; }
+.why-card {
+  display: flex; gap: 24px; align-items: flex-start;
+  background: white; border-radius: var(--radius);
+  padding: 32px; box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(240,165,0,.15);
+  transition: var(--transition);
+}
+.why-card:hover { box-shadow: var(--shadow-md); transform: translateX(6px); }
+
+.why-icon-wrap {
+  flex-shrink: 0; width: 52px; height: 52px;
+  background: linear-gradient(135deg, #fef3d0, #fde68a);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.why-icon { font-size: 1.5rem; }
+.why-title { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 8px; font-family: 'Inter', sans-serif; }
+.why-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+
+@media (max-width: 768px) {
+  .why-inner { grid-template-columns: 1fr; gap: 40px; }
+  .why-header { position: static; }
+}
