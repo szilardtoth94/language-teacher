@@ -328,3 +328,10 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 @media (max-width: 600px) {
   .footer-inner { flex-direction: column; text-align: center; align-items: center; }
 }
+
+/* ── Active nav link highlighting ── */
+.nav-link--active { color: white !important; background: rgba(255,255,255,.1) !important; }
+
+/* ── Section backgrounds ── */
+#about { background: var(--bg); }
+#services { background: var(--bg); }
