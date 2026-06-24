@@ -41,3 +41,42 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 /* Scroll-reveal utility */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Navbar ── */
+#navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(26, 39, 68, 0.96);
+  backdrop-filter: blur(8px);
+  transition: box-shadow var(--transition);
+}
+#navbar.navbar--scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.25); }
+
+.nav-inner { display: flex; align-items: center; gap: 32px; height: 68px; }
+.nav-logo { display: flex; flex-direction: column; margin-right: auto; }
+.nav-logo-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: white; line-height: 1.1; }
+.nav-logo-tag { font-size: 0.68rem; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+
+.nav-links { display: flex; gap: 8px; list-style: none; }
+.nav-link { padding: 8px 14px; border-radius: 6px; color: rgba(255,255,255,.82); font-size: 0.9rem; font-weight: 500; transition: var(--transition); }
+.nav-link:hover { color: white; background: rgba(255,255,255,.08); }
+
+.btn-nav { padding: 10px 22px; font-size: 0.875rem; background: var(--accent); color: var(--primary); border-radius: 50px; font-weight: 600; white-space: nowrap; transition: var(--transition); }
+.btn-nav:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: var(--transition); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .btn-nav { display: none; }
+  .nav-links {
+    display: none; flex-direction: column; gap: 0;
+    position: fixed; inset: 68px 0 0 0;
+    background: var(--primary); padding: 24px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-link { padding: 16px; font-size: 1.1rem; border-radius: 8px; }
+}
