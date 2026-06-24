@@ -153,3 +153,38 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
   .hero-ctas { justify-content: center; }
   .hero-sub { margin-left: auto; margin-right: auto; }
 }
+
+/* ── About ── */
+.about-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: center; }
+
+.about-avatar-wrap { position: relative; display: inline-block; }
+.about-avatar-placeholder {
+  width: 280px; height: 320px;
+  background: linear-gradient(135deg, #e2e8f0, #edf2f7);
+  border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  box-shadow: var(--shadow-md);
+}
+.about-avatar-label { font-size: 0.8rem; color: var(--muted); }
+
+.about-flag-ring {
+  display: flex; justify-content: space-around;
+  background: white; border-radius: 50px;
+  padding: 10px 20px; margin-top: 16px;
+  box-shadow: var(--shadow-sm);
+  font-size: 1.5rem;
+}
+
+.about-bio { color: var(--muted); line-height: 1.8; font-size: 1.025rem; }
+
+.about-highlights { list-style: none; margin-top: 32px; display: flex; flex-direction: column; gap: 20px; }
+.about-highlight { display: flex; gap: 16px; align-items: flex-start; }
+.highlight-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.about-highlight strong { display: block; color: var(--primary); font-weight: 600; margin-bottom: 2px; }
+.about-highlight p { color: var(--muted); font-size: 0.92rem; }
+
+@media (max-width: 768px) {
+  .about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .about-image { display: flex; justify-content: center; }
+  .about-avatar-placeholder { width: 220px; height: 250px; }
+}
