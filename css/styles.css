@@ -217,3 +217,32 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 
 @media (max-width: 900px) { .lang-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .lang-grid { grid-template-columns: 1fr; } }
+
+/* ── Services ── */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  transition: var(--transition);
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon { font-size: 2.2rem; margin-bottom: 16px; }
+.service-title { font-size: 1.15rem; color: var(--primary); margin-bottom: 10px; font-family: 'Inter', sans-serif; font-weight: 600; }
+.service-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
+
+@media (max-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .services-grid { grid-template-columns: 1fr; } }
