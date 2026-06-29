@@ -60,8 +60,6 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 .nav-link { padding: 8px 14px; border-radius: 6px; color: rgba(255,255,255,.82); font-size: 0.9rem; font-weight: 500; transition: var(--transition); }
 .nav-link:hover { color: white; background: rgba(255,255,255,.08); }
 
-.btn-nav { padding: 10px 22px; font-size: 0.875rem; background: var(--accent); color: var(--primary); border-radius: 50px; font-weight: 600; white-space: nowrap; transition: var(--transition); }
-.btn-nav:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
 .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 6px; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: var(--transition); }
@@ -71,7 +69,6 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 
 @media (max-width: 768px) {
   .nav-toggle { display: flex; }
-  .btn-nav { display: none; }
   .nav-links {
     display: none; flex-direction: column; gap: 0;
     position: fixed; inset: 68px 0 0 0;
