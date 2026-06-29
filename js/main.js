@@ -99,5 +99,19 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
 });
 
-// Apply saved or default language on load
-applyLanguage(localStorage.getItem('lang') || 'en');
+// Language picker modal — shown on first visit only
+const langModal = document.getElementById('lang-modal');
+
+langModal.querySelectorAll('.lang-modal-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    langModal.classList.remove('visible');
+    applyLanguage(btn.getAttribute('data-lang'));
+  });
+});
+
+const savedLang = localStorage.getItem('lang');
+if (savedLang) {
+  applyLanguage(savedLang);
+} else {
+  requestAnimationFrame(() => langModal.classList.add('visible'));
+}

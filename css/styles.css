@@ -363,3 +363,54 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 @media (max-width: 768px) {
   .lang-switcher { order: -1; margin-left: auto; margin-right: 8px; }
 }
+
+/* ── Language Picker Modal ── */
+.lang-modal {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(26,39,68,.88);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.lang-modal.visible { opacity: 1; visibility: visible; }
+.lang-modal-box {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  max-width: 420px; width: 90%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(24px);
+  transition: transform 0.35s ease;
+}
+.lang-modal.visible .lang-modal-box { transform: translateY(0); }
+.lang-modal-greeting {
+  font-size: 0.8rem; color: var(--muted);
+  letter-spacing: 0.06em; margin-bottom: 10px;
+}
+.lang-modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem; color: var(--primary);
+  margin-bottom: 32px;
+}
+.lang-modal-options {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.lang-modal-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 20px 16px;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.lang-modal-btn:hover {
+  border-color: var(--accent);
+  background: #fffbf0;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.lang-modal-flag { font-size: 2.2rem; line-height: 1; }
+.lang-modal-name { font-weight: 600; color: var(--primary); font-size: 0.95rem; }
