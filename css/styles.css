@@ -338,3 +338,28 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 #contact { background: var(--primary); }
 
 .section-header { margin-bottom: 56px; }
+
+/* ── Language Switcher ── */
+.lang-switcher {
+  display: flex; align-items: center; gap: 4px;
+  background: rgba(255,255,255,.08);
+  border-radius: 50px;
+  padding: 4px;
+}
+.lang-btn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent;
+  opacity: 0.55;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.lang-btn:hover { opacity: 0.9; background: rgba(255,255,255,.1); }
+.lang-btn.active { opacity: 1; background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.3); }
+
+@media (max-width: 768px) {
+  .lang-switcher { order: -1; margin-left: auto; margin-right: 8px; }
+}

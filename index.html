@@ -14,21 +14,28 @@
     <div class="container nav-inner">
       <a href="#" class="nav-logo">
         <span class="nav-logo-name">Szaniszló Boglárka</span>
-        <span class="nav-logo-tag">Language Teacher</span>
+        <span class="nav-logo-tag" data-i18n="nav.tag">Language Teacher</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" role="list">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#languages" class="nav-link">Languages</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#why" class="nav-link">Why Me</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#languages" class="nav-link" data-i18n="nav.languages">Languages</a></li>
+        <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+        <li><a href="#why" class="nav-link" data-i18n="nav.why">Why Me</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="btn btn-nav">Book a Free Trial</a>
+      <div class="lang-switcher" aria-label="Select language">
+        <button class="lang-btn active" data-lang="en" aria-label="English">🇬🇧</button>
+        <button class="lang-btn" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+        <button class="lang-btn" data-lang="hu" aria-label="Magyar">🇭🇺</button>
+        <button class="lang-btn" data-lang="ro" aria-label="Română">🇷🇴</button>
+      </div>
+      <a href="#contact" class="btn btn-nav" data-i18n="nav.cta">Book a Free Trial</a>
     </div>
   </nav>
+
   <section id="hero">
     <div class="hero-bg-shapes" aria-hidden="true">
       <div class="shape shape-1"></div>
@@ -37,16 +44,16 @@
     <div class="container hero-inner">
       <div class="hero-content">
         <div class="hero-flags" aria-label="Languages taught">
-          <span class="flag-badge">🇬🇧 English</span>
-          <span class="flag-badge">🇩🇪 German</span>
-          <span class="flag-badge">🇭🇺 Hungarian</span>
-          <span class="flag-badge">🇷🇴 Romanian</span>
+          <span class="flag-badge" data-i18n="hero.flag.en">🇬🇧 English</span>
+          <span class="flag-badge" data-i18n="hero.flag.de">🇩🇪 German</span>
+          <span class="flag-badge" data-i18n="hero.flag.hu">🇭🇺 Hungarian</span>
+          <span class="flag-badge" data-i18n="hero.flag.ro">🇷🇴 Romanian</span>
         </div>
-        <h1 class="hero-headline">Your Personal Guide<br /><em>to a New Language</em></h1>
-        <p class="hero-sub">Patient, dedicated, and tailored to you — whether you're a complete beginner or looking to reach the next level.</p>
+        <h1 class="hero-headline" data-i18n-html="hero.headline">Your Personal Guide<br /><em>to a New Language</em></h1>
+        <p class="hero-sub" data-i18n="hero.sub">Patient, dedicated, and tailored to you — whether you're a complete beginner or looking to reach the next level.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Book a Free Trial Lesson</a>
-          <a href="#about" class="btn btn-ghost">Learn More</a>
+          <a href="#contact" class="btn btn-primary" data-i18n="hero.cta.primary">Book a Free Trial Lesson</a>
+          <a href="#about" class="btn btn-ghost" data-i18n="hero.cta.ghost">Learn More</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
@@ -70,6 +77,7 @@
       </svg>
     </div>
   </section>
+
   <section id="about" class="section">
     <div class="container about-inner">
       <div class="about-image reveal">
@@ -79,7 +87,7 @@
               <circle cx="60" cy="48" r="28" fill="#cbd5e0"/>
               <ellipse cx="60" cy="110" rx="44" ry="28" fill="#cbd5e0"/>
             </svg>
-            <p class="about-avatar-label">Photo coming soon</p>
+            <p class="about-avatar-label" data-i18n="about.photo">Photo coming soon</p>
           </div>
           <div class="about-flag-ring" aria-hidden="true">
             <span>🇬🇧</span><span>🇩🇪</span><span>🇭🇺</span><span>🇷🇴</span>
@@ -87,257 +95,252 @@
         </div>
       </div>
       <div class="about-content reveal">
-        <p class="section-label">About me</p>
-        <h2 class="section-title">A Dedicated Teacher<br />Who Loves Languages</h2>
-        <p class="about-bio">I'm passionate about languages and the doors they open — to new cultures, new friendships, and new opportunities. My approach is simple: every student is different, and every lesson should reflect that. I take the time to understand your goals, your learning style, and your pace.</p>
-        <p class="about-bio" style="margin-top:16px;">Whether you're picking up your very first words or preparing for an exam, I'm here to guide you step by step — with patience, encouragement, and genuine enthusiasm for your progress.</p>
+        <p class="section-label" data-i18n="about.label">About me</p>
+        <h2 class="section-title" data-i18n-html="about.title">A Dedicated Teacher<br />Who Loves Languages</h2>
+        <p class="about-bio" data-i18n="about.bio1">I'm passionate about languages and the doors they open — to new cultures, new friendships, and new opportunities. My approach is simple: every student is different, and every lesson should reflect that. I take the time to understand your goals, your learning style, and your pace.</p>
+        <p class="about-bio" style="margin-top:16px;" data-i18n="about.bio2">Whether you're picking up your very first words or preparing for an exam, I'm here to guide you step by step — with patience, encouragement, and genuine enthusiasm for your progress.</p>
         <ul class="about-highlights">
           <li class="about-highlight">
             <span class="highlight-icon">🎯</span>
             <div>
-              <strong>Lessons tailored to you</strong>
-              <p>Your goals and pace shape every session — no generic textbooks.</p>
+              <strong data-i18n="about.h1.title">Lessons tailored to you</strong>
+              <p data-i18n="about.h1.desc">Your goals and pace shape every session — no generic textbooks.</p>
             </div>
           </li>
           <li class="about-highlight">
             <span class="highlight-icon">🕐</span>
             <div>
-              <strong>Flexible scheduling</strong>
-              <p>Morning, evening, weekends — we find a time that works for your life.</p>
+              <strong data-i18n="about.h2.title">Flexible scheduling</strong>
+              <p data-i18n="about.h2.desc">Morning, evening, weekends — we find a time that works for your life.</p>
             </div>
           </li>
           <li class="about-highlight">
             <span class="highlight-icon">💛</span>
             <div>
-              <strong>Patient and encouraging</strong>
-              <p>Mistakes are part of learning. A supportive environment makes all the difference.</p>
+              <strong data-i18n="about.h3.title">Patient and encouraging</strong>
+              <p data-i18n="about.h3.desc">Mistakes are part of learning. A supportive environment makes all the difference.</p>
             </div>
           </li>
         </ul>
       </div>
     </div>
   </section>
+
   <section id="languages" class="section">
     <div class="container">
-      <div class="section-header reveal" style="text-align:center; margin-bottom:56px;">
-        <p class="section-label" style="color:var(--accent);">Languages</p>
-        <h2 class="section-title" style="color:white;">Four Languages.<br />One Trusted Teacher.</h2>
-        <p class="section-sub" style="color:rgba(255,255,255,.65); margin: 0 auto;">From absolute beginner to advanced — I'll guide you at every level in all four languages.</p>
+      <div class="section-header reveal" style="text-align:center;">
+        <p class="section-label" style="color:var(--accent);" data-i18n="lang.label">Languages</p>
+        <h2 class="section-title" style="color:white;" data-i18n-html="lang.title">Four Languages.<br />One Trusted Teacher.</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.65); margin: 0 auto;" data-i18n="lang.sub">From absolute beginner to advanced — I'll guide you at every level in all four languages.</p>
       </div>
       <div class="lang-grid">
         <div class="lang-card reveal">
           <div class="lang-flag">🇬🇧</div>
-          <h3 class="lang-name">English</h3>
-          <p class="lang-desc">The world's lingua franca — open doors in travel, business, and culture. From everyday conversation to professional fluency.</p>
+          <h3 class="lang-name" data-i18n="lang.en.name">English</h3>
+          <p class="lang-desc" data-i18n="lang.en.desc">The world's lingua franca — open doors in travel, business, and culture. From everyday conversation to professional fluency.</p>
           <div class="lang-levels">
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
           </div>
-          <p class="lang-level-label">A1 → C2 · All levels</p>
+          <p class="lang-level-label" data-i18n="lang.en.level">A1 → C2 · All levels</p>
         </div>
         <div class="lang-card reveal">
           <div class="lang-flag">🇩🇪</div>
-          <h3 class="lang-name">German</h3>
-          <p class="lang-desc">One of Europe's most spoken languages — essential for study, work, or life in Germany, Austria, and Switzerland.</p>
+          <h3 class="lang-name" data-i18n="lang.de.name">German</h3>
+          <p class="lang-desc" data-i18n="lang.de.desc">One of Europe's most spoken languages — essential for study, work, or life in Germany, Austria, and Switzerland.</p>
           <div class="lang-levels">
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
           </div>
-          <p class="lang-level-label">A1 → C2 · All levels</p>
+          <p class="lang-level-label" data-i18n="lang.de.level">A1 → C2 · All levels</p>
         </div>
         <div class="lang-card reveal">
           <div class="lang-flag">🇭🇺</div>
-          <h3 class="lang-name">Hungarian</h3>
-          <p class="lang-desc">A unique and beautiful language — whether for heritage, family, or curiosity, I'll make it approachable and enjoyable.</p>
+          <h3 class="lang-name" data-i18n="lang.hu.name">Hungarian</h3>
+          <p class="lang-desc" data-i18n="lang.hu.desc">A unique and beautiful language — whether for heritage, family, or curiosity, I'll make it approachable and enjoyable.</p>
           <div class="lang-levels">
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot"></span>
-            <span class="level-dot"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
+            <span class="level-dot"></span><span class="level-dot"></span>
           </div>
-          <p class="lang-level-label">A1 → B2 · Beginner to upper-intermediate</p>
+          <p class="lang-level-label" data-i18n="lang.hu.level">A1 → B2 · Beginner to upper-intermediate</p>
         </div>
         <div class="lang-card reveal">
           <div class="lang-flag">🇷🇴</div>
-          <h3 class="lang-name">Romanian</h3>
-          <p class="lang-desc">A rich Romance language — perfect for connecting with Romanian culture, family, or expanding your language portfolio.</p>
+          <h3 class="lang-name" data-i18n="lang.ro.name">Romanian</h3>
+          <p class="lang-desc" data-i18n="lang.ro.desc">A rich Romance language — perfect for connecting with Romanian culture, family, or expanding your language portfolio.</p>
           <div class="lang-levels">
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot active"></span>
-            <span class="level-dot"></span>
-            <span class="level-dot"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
+            <span class="level-dot active"></span><span class="level-dot active"></span>
+            <span class="level-dot"></span><span class="level-dot"></span>
           </div>
-          <p class="lang-level-label">A1 → B2 · Beginner to upper-intermediate</p>
+          <p class="lang-level-label" data-i18n="lang.ro.level">A1 → B2 · Beginner to upper-intermediate</p>
         </div>
       </div>
     </div>
   </section>
+
   <section id="services" class="section">
     <div class="container">
       <div class="section-header reveal" style="margin-bottom:56px;">
-        <p class="section-label">What I offer</p>
-        <h2 class="section-title">Lessons Designed<br />Around Your Goals</h2>
-        <p class="section-sub">Whether you're learning for fun, work, family, or exams — there's a format that fits your life.</p>
+        <p class="section-label" data-i18n="svc.label">What I offer</p>
+        <h2 class="section-title" data-i18n-html="svc.title">Lessons Designed<br />Around Your Goals</h2>
+        <p class="section-sub" data-i18n="svc.sub">Whether you're learning for fun, work, family, or exams — there's a format that fits your life.</p>
       </div>
       <div class="services-grid">
         <div class="service-card reveal">
           <div class="service-icon">💻</div>
-          <h3 class="service-title">Online Lessons</h3>
-          <p class="service-desc">Learn from anywhere via video call. All you need is an internet connection — I take care of the rest.</p>
+          <h3 class="service-title" data-i18n="svc.online.title">Online Lessons</h3>
+          <p class="service-desc" data-i18n="svc.online.desc">Learn from anywhere via video call. All you need is an internet connection — I take care of the rest.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">🏠</div>
-          <h3 class="service-title">In-Person Lessons</h3>
-          <p class="service-desc">Face-to-face sessions for a more personal experience. Available locally — get in touch to discuss location.</p>
+          <h3 class="service-title" data-i18n="svc.inperson.title">In-Person Lessons</h3>
+          <p class="service-desc" data-i18n="svc.inperson.desc">Face-to-face sessions for a more personal experience. Available locally — get in touch to discuss location.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">📝</div>
-          <h3 class="service-title">Exam Preparation</h3>
-          <p class="service-desc">Targeted prep for Goethe, ECL, IELTS, and other language certificates. Focused, structured practice at your level.</p>
+          <h3 class="service-title" data-i18n="svc.exam.title">Exam Preparation</h3>
+          <p class="service-desc" data-i18n="svc.exam.desc">Targeted prep for Goethe, ECL, IELTS, and other language certificates. Focused, structured practice at your level.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">💼</div>
-          <h3 class="service-title">Business Language</h3>
-          <p class="service-desc">Professional vocabulary, emails, presentations, and meetings — for the language skills your career needs.</p>
+          <h3 class="service-title" data-i18n="svc.business.title">Business Language</h3>
+          <p class="service-desc" data-i18n="svc.business.desc">Professional vocabulary, emails, presentations, and meetings — for the language skills your career needs.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">🎒</div>
-          <h3 class="service-title">Kids &amp; Teenagers</h3>
-          <p class="service-desc">Age-appropriate, engaging lessons that make learning fun. Building confidence and curiosity from day one.</p>
+          <h3 class="service-title" data-i18n="svc.kids.title">Kids &amp; Teenagers</h3>
+          <p class="service-desc" data-i18n="svc.kids.desc">Age-appropriate, engaging lessons that make learning fun. Building confidence and curiosity from day one.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">💬</div>
-          <h3 class="service-title">Conversation Practice</h3>
-          <p class="service-desc">Speak more, hesitate less. Regular conversation practice to build fluency, confidence, and natural flow.</p>
+          <h3 class="service-title" data-i18n="svc.conv.title">Conversation Practice</h3>
+          <p class="service-desc" data-i18n="svc.conv.desc">Speak more, hesitate less. Regular conversation practice to build fluency, confidence, and natural flow.</p>
         </div>
       </div>
     </div>
   </section>
+
   <section id="why" class="section why-section">
     <div class="container">
       <div class="why-inner">
         <div class="why-header reveal">
-          <p class="section-label">Why choose me</p>
-          <h2 class="section-title">The Difference a<br />Dedicated Teacher Makes</h2>
-          <a href="#contact" class="btn btn-primary" style="margin-top:28px; display:inline-flex;">Get Started Today</a>
+          <p class="section-label" data-i18n="why.label">Why choose me</p>
+          <h2 class="section-title" data-i18n-html="why.title">The Difference a<br />Dedicated Teacher Makes</h2>
+          <a href="#contact" class="btn btn-primary" style="margin-top:28px; display:inline-flex;" data-i18n="why.cta">Get Started Today</a>
         </div>
         <div class="why-cards">
           <div class="why-card reveal">
-            <div class="why-icon-wrap">
-              <span class="why-icon">🎯</span>
+            <div class="why-icon-wrap"><span class="why-icon">🎯</span></div>
+            <div>
+              <h3 class="why-title" data-i18n="why.c1.title">Tailored to You</h3>
+              <p class="why-desc" data-i18n="why.c1.desc">No cookie-cutter lessons. Each session is built around your specific goals, interests, and learning style — because what works for one student may not work for another.</p>
             </div>
-            <h3 class="why-title">Tailored to You</h3>
-            <p class="why-desc">No cookie-cutter lessons. Each session is built around your specific goals, interests, and learning style — because what works for one student may not work for another.</p>
           </div>
           <div class="why-card reveal">
-            <div class="why-icon-wrap">
-              <span class="why-icon">🤝</span>
+            <div class="why-icon-wrap"><span class="why-icon">🤝</span></div>
+            <div>
+              <h3 class="why-title" data-i18n="why.c2.title">Flexible &amp; Patient</h3>
+              <p class="why-desc" data-i18n="why.c2.desc">Learning a language takes time and that's completely okay. I adapt to your schedule and your pace, with an encouraging attitude every step of the way.</p>
             </div>
-            <h3 class="why-title">Flexible &amp; Patient</h3>
-            <p class="why-desc">Learning a language takes time and that's completely okay. I adapt to your schedule and your pace, with an encouraging attitude every step of the way.</p>
           </div>
           <div class="why-card reveal">
-            <div class="why-icon-wrap">
-              <span class="why-icon">🌍</span>
+            <div class="why-icon-wrap"><span class="why-icon">🌍</span></div>
+            <div>
+              <h3 class="why-title" data-i18n="why.c3.title">4 Languages, 1 Teacher</h3>
+              <p class="why-desc" data-i18n="why.c3.desc">English, German, Hungarian, Romanian — one consistent, trusted relationship across all your language learning needs. No need to find a different teacher for each language.</p>
             </div>
-            <h3 class="why-title">4 Languages, 1 Teacher</h3>
-            <p class="why-desc">English, German, Hungarian, Romanian — one consistent, trusted relationship across all your language learning needs. No need to find a different teacher for each language.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <section id="contact" class="section">
-  <div class="container">
-    <div class="contact-inner">
-      <div class="contact-info reveal">
-        <p class="section-label" style="color:var(--accent);">Get in touch</p>
-        <h2 class="section-title" style="color:white;">Ready to Start<br />Your Language Journey?</h2>
-        <p class="contact-intro">I'd love to hear from you. Fill in the form and I'll get back to you within 24 hours to arrange your free trial lesson.</p>
-        <ul class="contact-details">
-          <li class="contact-detail">
-            <span class="contact-detail-icon">✉️</span>
-            <span>szaniszlo.boglarka.languages@email.com</span>
-          </li>
-          <li class="contact-detail">
-            <span class="contact-detail-icon">📞</span>
-            <span>+00 000 000 0000</span>
-          </li>
-          <li class="contact-detail">
-            <span class="contact-detail-icon">📍</span>
-            <span>Online · In-Person (Your City)</span>
-          </li>
-        </ul>
-      </div>
-      <div class="contact-form-wrap reveal">
-        <form class="contact-form" action="mailto:szaniszlo.boglarka.languages@email.com" method="GET">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name *</label>
-              <input type="text" id="name" name="Name" placeholder="Jane Smith" required />
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info reveal">
+          <p class="section-label" style="color:var(--accent);" data-i18n="contact.label">Get in touch</p>
+          <h2 class="section-title" style="color:white;" data-i18n-html="contact.title">Ready to Start<br />Your Language Journey?</h2>
+          <p class="contact-intro" data-i18n="contact.intro">I'd love to hear from you. Fill in the form and I'll get back to you within 24 hours to arrange your free trial lesson.</p>
+          <ul class="contact-details">
+            <li class="contact-detail">
+              <span class="contact-detail-icon">✉️</span>
+              <span>szaniszlo.boglarka.languages@email.com</span>
+            </li>
+            <li class="contact-detail">
+              <span class="contact-detail-icon">📞</span>
+              <span>+00 000 000 0000</span>
+            </li>
+            <li class="contact-detail">
+              <span class="contact-detail-icon">📍</span>
+              <span data-i18n="contact.location">Online · In-Person (Your City)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" action="mailto:szaniszlo.boglarka.languages@email.com" method="GET">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" data-i18n="contact.form.name">Your Name *</label>
+                <input type="text" id="name" name="Name" data-i18n-placeholder="contact.form.name.ph" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="email" data-i18n="contact.form.email">Email Address *</label>
+                <input type="email" id="email" name="Email" data-i18n-placeholder="contact.form.email.ph" placeholder="jane@example.com" required />
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="Email" placeholder="jane@example.com" required />
+              <label for="phone" data-i18n="contact.form.phone">Phone Number (optional)</label>
+              <input type="tel" id="phone" name="Phone" data-i18n-placeholder="contact.form.phone.ph" placeholder="+1 234 567 8900" />
             </div>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number (optional)</label>
-            <input type="tel" id="phone" name="Phone" placeholder="+1 234 567 8900" />
-          </div>
-          <div class="form-group">
-            <label for="language">Language you're interested in *</label>
-            <select id="language" name="Language" required>
-              <option value="" disabled selected>Select a language…</option>
-              <option value="English">English 🇬🇧</option>
-              <option value="German">German 🇩🇪</option>
-              <option value="Hungarian">Hungarian 🇭🇺</option>
-              <option value="Romanian">Romanian 🇷🇴</option>
-              <option value="Not sure">Not sure yet</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Your Message *</label>
-            <textarea id="message" name="Message" rows="4" placeholder="Tell me a bit about your goals and current level…" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit">Send a Message →</button>
-        </form>
+            <div class="form-group">
+              <label for="language" data-i18n="contact.form.lang">Language you're interested in *</label>
+              <select id="language" name="Language" required>
+                <option value="" disabled selected data-i18n-option="contact.form.lang.ph">Select a language…</option>
+                <option value="English" data-i18n-option="contact.form.lang.en">English 🇬🇧</option>
+                <option value="German" data-i18n-option="contact.form.lang.de">German 🇩🇪</option>
+                <option value="Hungarian" data-i18n-option="contact.form.lang.hu">Hungarian 🇭🇺</option>
+                <option value="Romanian" data-i18n-option="contact.form.lang.ro">Romanian 🇷🇴</option>
+                <option value="Not sure" data-i18n-option="contact.form.lang.ns">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message" data-i18n="contact.form.msg">Your Message *</label>
+              <textarea id="message" name="Message" rows="4" data-i18n-placeholder="contact.form.msg.ph" placeholder="Tell me a bit about your goals and current level…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" data-i18n="contact.form.submit">Send a Message →</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
   <footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="footer-name">Szaniszló Boglárka</span>
-      <span class="footer-tagline">Language Teacher · English · German · Hungarian · Romanian</span>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-name">Szaniszló Boglárka</span>
+        <span class="footer-tagline" data-i18n="footer.tagline">Language Teacher · English · German · Hungarian · Romanian</span>
+      </div>
+      <div class="footer-social" aria-label="Social media">
+        <a href="#" aria-label="Facebook" class="social-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="social-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 Szaniszló Boglárka. All rights reserved.</p>
     </div>
-    <div class="footer-social" aria-label="Social media">
-      <a href="#" aria-label="Facebook" class="social-link">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a href="#" aria-label="Instagram" class="social-link">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="#" aria-label="LinkedIn" class="social-link">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
-    </div>
-    <p class="footer-copy">© 2026 Szaniszló Boglárka. All rights reserved.</p>
-  </div>
-</footer>
+  </footer>
+
+  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

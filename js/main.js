@@ -52,3 +52,52 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 linkedSections.forEach(s => sectionObserver.observe(s));
+
+// ── i18n Language Switcher ──
+function applyLanguage(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  // textContent updates
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // innerHTML updates (for elements with <br>, <em>, etc.)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // placeholder attribute updates
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.setAttribute('placeholder', t[key]);
+  });
+
+  // <option> text updates
+  document.querySelectorAll('[data-i18n-option]').forEach(el => {
+    const key = el.getAttribute('data-i18n-option');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = lang;
+
+  // Persist choice
+  localStorage.setItem('lang', lang);
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+}
+
+// Wire up switcher buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
+});
+
+// Apply saved or default language on load
+applyLanguage(localStorage.getItem('lang') || 'en');
