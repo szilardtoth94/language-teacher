@@ -6,7 +6,6 @@ const translations = {
     'nav.services': 'Services',
     'nav.why': 'Why Me',
     'nav.contact': 'Contact',
-    'nav.cta': 'Book a Free Trial',
 
     'hero.flag.en': '🇬🇧 English',
     'hero.flag.de': '🇩🇪 German',
@@ -103,7 +102,6 @@ const translations = {
     'nav.services': 'Angebote',
     'nav.why': 'Warum ich?',
     'nav.contact': 'Kontakt',
-    'nav.cta': 'Kostenlose Probestunde',
 
     'hero.flag.en': '🇬🇧 Englisch',
     'hero.flag.de': '🇩🇪 Deutsch',
@@ -200,7 +198,6 @@ const translations = {
     'nav.services': 'Szolgáltatások',
     'nav.why': 'Miért én?',
     'nav.contact': 'Kapcsolat',
-    'nav.cta': 'Ingyenes próbaóra',
 
     'hero.flag.en': '🇬🇧 Angol',
     'hero.flag.de': '🇩🇪 Német',
@@ -297,7 +294,6 @@ const translations = {
     'nav.services': 'Servicii',
     'nav.why': 'De ce eu?',
     'nav.contact': 'Contact',
-    'nav.cta': 'Lecție de probă gratuită',
 
     'hero.flag.en': '🇬🇧 Engleză',
     'hero.flag.de': '🇩🇪 Germană',
