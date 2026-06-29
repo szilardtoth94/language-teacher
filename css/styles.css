@@ -71,9 +71,10 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
   .nav-toggle { display: flex; }
   .nav-links {
     display: none; flex-direction: column; gap: 0;
-    position: fixed; inset: 68px 0 0 0;
+    position: absolute; top: 100%; left: 0; right: 0;
     background: #1a2744; padding: 24px;
     z-index: 99; overflow-y: auto;
+    max-height: calc(100vh - 68px);
   }
   .nav-links.open { display: flex; }
   .nav-link { padding: 16px; font-size: 1.1rem; border-radius: 8px; }
