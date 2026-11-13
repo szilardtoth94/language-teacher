@@ -115,3 +115,47 @@ if (savedLang) {
 } else {
   requestAnimationFrame(() => langModal.classList.add('visible'));
 }
+
+// ── Contact form: send via FormSubmit (AJAX), show status inline ──
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  const statusEl = contactForm.querySelector('.form-status');
+  const submitBtn = contactForm.querySelector('.form-submit');
+  const tr = (key) => {
+    const lang = document.documentElement.lang;
+    return (translations[lang] || translations.en)[key] || translations.en[key];
+  };
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(contactForm));
+    if (data._honey) return; // bot filled the honeypot
+
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = tr('contact.form.sending');
+    statusEl.className = 'form-status';
+    statusEl.textContent = '';
+
+    try {
+      const endpoint = contactForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || res.status);
+      statusEl.classList.add('form-status--ok');
+      statusEl.textContent = tr('contact.form.success');
+      contactForm.reset();
+    } catch (err) {
+      console.error('Contact form error:', err);
+      statusEl.classList.add('form-status--error');
+      statusEl.textContent = tr('contact.form.error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
+  });
+}
