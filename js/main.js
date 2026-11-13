@@ -82,6 +82,12 @@ function applyLanguage(lang) {
     if (t[key] !== undefined) el.textContent = t[key];
   });
 
+  // href updates (language-specific links)
+  document.querySelectorAll('[data-i18n-href]').forEach(el => {
+    const key = el.getAttribute('data-i18n-href');
+    if (t[key] !== undefined) el.setAttribute('href', t[key]);
+  });
+
   // Update html lang attribute
   document.documentElement.lang = lang;
 
