@@ -53,65 +53,79 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 linkedSections.forEach(s => sectionObserver.observe(s));
 
-// ── i18n Language Switcher ──
-function applyLanguage(lang) {
-  const t = translations[lang];
-  if (!t) return;
+// ── Language: each language is its own page (/, /de/, /hu/, /ro/) ──
+// Pages are pre-rendered by build.js; the switcher and modal are plain links.
+const pageLang = document.documentElement.lang;
+const storage = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch { /* private mode */ } },
+};
 
-  // textContent updates
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) el.textContent = t[key];
-  });
-
-  // innerHTML updates (for elements with <br>, <em>, etc.)
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    const key = el.getAttribute('data-i18n-html');
-    if (t[key] !== undefined) el.innerHTML = t[key];
-  });
-
-  // placeholder attribute updates
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    if (t[key] !== undefined) el.setAttribute('placeholder', t[key]);
-  });
-
-  // <option> text updates
-  document.querySelectorAll('[data-i18n-option]').forEach(el => {
-    const key = el.getAttribute('data-i18n-option');
-    if (t[key] !== undefined) el.textContent = t[key];
-  });
-
-  // Update html lang attribute
-  document.documentElement.lang = lang;
-
-  // Persist choice
-  localStorage.setItem('lang', lang);
-
-  // Update active button
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+// Opened straight from disk: folder links need an explicit index.html
+if (location.protocol === 'file:') {
+  document.querySelectorAll('a.lang-btn, a.lang-modal-btn').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href.endsWith('/')) a.setAttribute('href', href + 'index.html');
   });
 }
 
-// Wire up switcher buttons
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
+document.querySelectorAll('a.lang-btn, a.lang-modal-btn').forEach(a => {
+  a.addEventListener('click', () => storage.set('lang', a.dataset.lang));
 });
 
-// Language picker modal — shown on first visit only
+const savedLang = storage.get('lang');
 const langModal = document.getElementById('lang-modal');
-
-langModal.querySelectorAll('.lang-modal-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    langModal.classList.remove('visible');
-    applyLanguage(btn.getAttribute('data-lang'));
-  });
-});
-
-const savedLang = localStorage.getItem('lang');
-if (savedLang) {
-  applyLanguage(savedLang);
-} else {
+if (pageLang !== 'en') {
+  // Landing on a language page counts as choosing it
+  storage.set('lang', pageLang);
+} else if (savedLang && savedLang !== 'en' && translations[savedLang]) {
+  // Returning visitor on the English root: send them to their language
+  const target = savedLang + '/' + (location.protocol === 'file:' ? 'index.html' : '');
+  location.replace(target + location.hash);
+} else if (!savedLang && langModal) {
   requestAnimationFrame(() => langModal.classList.add('visible'));
+}
+
+// ── Contact form: send via FormSubmit (AJAX), show status inline ──
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  const statusEl = contactForm.querySelector('.form-status');
+  const submitBtn = contactForm.querySelector('.form-submit');
+  const tr = (key) => {
+    const lang = document.documentElement.lang;
+    return (translations[lang] || translations.en)[key] || translations.en[key];
+  };
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(contactForm));
+    if (data._honey) return; // bot filled the honeypot
+
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = tr('contact.form.sending');
+    statusEl.className = 'form-status';
+    statusEl.textContent = '';
+
+    try {
+      const endpoint = contactForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || res.status);
+      statusEl.classList.add('form-status--ok');
+      statusEl.textContent = tr('contact.form.success');
+      contactForm.reset();
+    } catch (err) {
+      console.error('Contact form error:', err);
+      statusEl.classList.add('form-status--error');
+      statusEl.textContent = tr('contact.form.error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
+  });
 }
