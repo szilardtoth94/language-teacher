@@ -1,5 +1,9 @@
 const translations = {
   en: {
+    'meta.title': "Online German Lessons with Szaniszló Boglárka | German Go Online",
+    'meta.description': "Learn German online with Szaniszló Boglárka: task-based lessons from A1 to C2, flexible scheduling, digital materials, exam preparation and business German.",
+    'meta.locale': "en_US",
+
     'nav.about': 'About',
     'nav.method': "Method",
     'nav.services': 'Services',
@@ -98,6 +102,10 @@ const translations = {
   },
 
   de: {
+    'meta.title': "Deutschunterricht online mit Szaniszló Boglárka | German Go Online",
+    'meta.description': "Deutsch online lernen mit Szaniszló Boglárka: aufgabenbasierter Unterricht von A1 bis C2, flexible Termine, digitale Materialien und Prüfungsvorbereitung.",
+    'meta.locale': "de_DE",
+
     'nav.about': 'Über mich',
     'nav.method': "Methode",
     'nav.services': 'Angebote',
@@ -196,6 +204,10 @@ const translations = {
   },
 
   hu: {
+    'meta.title': "Online német órák – Szaniszló Boglárka | German Go Online",
+    'meta.description': "Tanulj németül online Szaniszló Boglárkával: gyakorlatközpontú órák A1-től C2-ig, rugalmas időpontok, digitális tananyag és nyelvvizsga-felkészítés.",
+    'meta.locale': "hu_HU",
+
     'nav.about': 'Rólam',
     'nav.method': "Módszer",
     'nav.services': 'Szolgáltatások',
@@ -294,6 +306,10 @@ const translations = {
   },
 
   ro: {
+    'meta.title': "Lecții de germană online – Szaniszló Boglárka | German Go Online",
+    'meta.description': "Învață germana online cu Szaniszló Boglárka: lecții practice de la A1 la C2, program flexibil, materiale digitale și pregătire pentru examene.",
+    'meta.locale': "ro_RO",
+
     'nav.about': 'Despre mine',
     'nav.method': "Metodă",
     'nav.services': 'Servicii',
