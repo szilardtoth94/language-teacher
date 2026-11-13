@@ -92,10 +92,8 @@ const translations = {
 
     'footer.tagline': "German Teacher · Online Lessons",
     'footer.copy': '© 2026 German Go Online · Szaniszló Boglárka. All rights reserved.',
-    'fts.label': "Website made by",
-    'fts.title': "Your business deserves to be found online",
-    'fts.desc': "FTS Visions builds custom websites for small businesses — from €200, ready in about 7 days, in Romanian, Hungarian and English.",
-    'fts.cta': "Visit FTS Visions →",
+    'fts.label': "Website made by FTS Visions",
+    'fts.cta': "Visit →",
     'fts.href': "https://www.ftsvisions.com/en/",
   },
 
@@ -192,10 +190,8 @@ const translations = {
 
     'footer.tagline': "Deutschlehrerin · Online-Unterricht",
     'footer.copy': '© 2026 German Go Online · Szaniszló Boglárka. Alle Rechte vorbehalten.',
-    'fts.label': "Website erstellt von",
-    'fts.title': "Ihr Unternehmen verdient es, online gefunden zu werden",
-    'fts.desc': "FTS Visions erstellt individuelle Websites für kleine Unternehmen — ab 200 €, fertig in etwa 7 Tagen, auf Rumänisch, Ungarisch und Englisch.",
-    'fts.cta': "FTS Visions besuchen →",
+    'fts.label': "Website erstellt von FTS Visions",
+    'fts.cta': "Ansehen →",
     'fts.href': "https://www.ftsvisions.com/en/",
   },
 
@@ -292,10 +288,8 @@ const translations = {
 
     'footer.tagline': "Némettanár · Online órák",
     'footer.copy': '© 2026 German Go Online · Szaniszló Boglárka. Minden jog fenntartva.',
-    'fts.label': "A weboldalt készítette",
-    'fts.title': "A vállalkozásod megérdemli, hogy megtalálják online",
-    'fts.desc': "Az FTS Visions egyedi weboldalakat készít kisvállalkozásoknak — már 200 €-tól, kb. 7 nap alatt, román, magyar és angol nyelven.",
-    'fts.cta': "Ismerd meg az FTS Visionst →",
+    'fts.label': "A weboldalt az FTS Visions készítette",
+    'fts.cta': "Megnézem →",
     'fts.href': "https://www.ftsvisions.com/hu/",
   },
 
@@ -392,10 +386,8 @@ const translations = {
 
     'footer.tagline': "Profesoară de germană · Lecții online",
     'footer.copy': '© 2026 German Go Online · Szaniszló Boglárka. Toate drepturile rezervate.',
-    'fts.label': "Site realizat de",
-    'fts.title': "Afacerea ta merită să fie găsită online",
-    'fts.desc': "FTS Visions creează site-uri personalizate pentru afaceri mici — de la doar €200, gata în aproximativ 7 zile, în română, maghiară și engleză.",
-    'fts.cta': "Vizitează FTS Visions →",
+    'fts.label': "Site realizat de FTS Visions",
+    'fts.cta': "Vizitează →",
     'fts.href': "https://www.ftsvisions.com/ro/",
   }
 };
