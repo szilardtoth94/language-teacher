@@ -43,15 +43,14 @@ function seoBlock(lang) {
     logo: SITE_URL + 'img/icon-512.png',
     image: img,
     description: t['meta.description'],
-    email: 'GlobalTalk@mail.com',
-    telephone: '+40747552607',
+    email: 'germangoonline@gmail.com',
+    telephone: '+40752422789',
     sameAs: ['https://www.instagram.com/germango_online/'],
     knowsLanguage: 'de',
     availableLanguage: LANGS,
     founder: {
       '@type': 'Person',
       name: 'Szaniszló Boglárka',
-      image: SITE_URL + 'img/profile.jpeg',
       knowsLanguage: LANGS,
     },
   };
