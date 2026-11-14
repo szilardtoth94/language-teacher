@@ -29,7 +29,7 @@ const pageUrl = (l) => SITE_URL + langDir(l);
 function seoBlock(lang) {
   const t = translations[lang];
   const url = pageUrl(lang);
-  const img = SITE_URL + 'img/og-image.jpg';
+  const img = SITE_URL + 'img/og-image.jpg?v=2';
   const alternates = LANGS.map((l) => `  <link rel="alternate" hreflang="${l}" href="${pageUrl(l)}" />`)
     .concat(`  <link rel="alternate" hreflang="x-default" href="${pageUrl(DEFAULT_LANG)}" />`);
   const otherLocales = LANGS.filter((l) => l !== lang)
@@ -69,6 +69,7 @@ function seoBlock(lang) {
     `  <meta property="og:description" content="${escAttr(t['meta.description'])}" />`,
     `  <meta property="og:url" content="${url}" />`,
     `  <meta property="og:image" content="${img}" />`,
+    '  <meta property="og:image:type" content="image/jpeg" />',
     '  <meta property="og:image:width" content="1200" />',
     '  <meta property="og:image:height" content="630" />',
     '  <meta property="og:image:alt" content="German Go Online logo — glowing globe" />',
