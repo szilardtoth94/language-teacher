@@ -12,7 +12,7 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-const SITE_URL = 'https://szilardtoth94.github.io/language-teacher/';
+const SITE_URL = 'https://germangoonline.ro/';
 const LANGS = ['en', 'de', 'hu', 'ro'];
 const DEFAULT_LANG = 'en'; // served at the site root
 
